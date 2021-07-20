@@ -4,6 +4,9 @@ import LoginSection from "./components/LoginSection";
 import TeacherLogin from "./components/TeacherLogin";
 import StudentLogin from "./components/StudentLogin";
 import Instruction from "./components/instructionSection/Instruction";
+import TeacherInstruction from "./components/createTestSection/TeacherInstruction";
+import TeacherSignup from "./components/TeacherSignup";
+import QuestionForm from "./components/createTestSection/QuestionForm";
 import { useState, useEffect } from "react";
 import {
   BrowserRouter as Router,
@@ -69,6 +72,15 @@ useEffect(() => {
           </Route>
           <Route exact path="/mainTest">
             <MainTest/>
+          </Route>
+          <Route exact path="/teacherSignup">
+            <TeacherSignup/>
+          </Route>
+          <Route exact path="/teacherInstruction">
+            <TeacherInstruction/>
+          </Route>
+          <Route exact path="/questionForm">
+            <QuestionForm/>
           </Route>
         </Switch>
         <Footer/>

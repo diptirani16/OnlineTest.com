@@ -99,7 +99,7 @@ export default function TeacherLogin() {
                     </div>
                     <button type="submit" className="btn btn-primary" style={formGroupStyle}>Submit</button>
                 </form>
-                    <Link to="/studentLogin"><button type="submit" className="btn btn-light" style={loginStyle}>Login</button></Link>
+                    <Link to="/teacherSignup"><button type="submit" className="btn btn-light" style={loginStyle}>Login</button></Link>
             </div>
         </div>
     )
