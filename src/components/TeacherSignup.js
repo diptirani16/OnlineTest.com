@@ -29,16 +29,16 @@ export default function TeacherSignup() {
 
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
-    const [confirmPassword, setConfirmPassword] = useState("")
+    // const [confirmPassword, setConfirmPassword] = useState("")
 
-    // const submit = (e) => {
-    //     e.preventDefault();
-    //     if(!Username && !password && !confirmPassword){
-    //         alert("All the inputs are required");
-    //     }
-    //     if(password != confirmPassword){
-    //         alert("Password doesn't match.")
-    //     }
+    const submit = (e) => {
+        e.preventDefault();
+        if(username !== "admin"){
+            alert("Incorrect username!!");
+        }
+        if(password !== "admin" ){
+            alert("Incorrect password!!")
+        }
     //     if (!validUsername.test(Username)) {
     //         // setUsername(true);
     //         alert("Username is not correct");
@@ -54,7 +54,7 @@ export default function TeacherSignup() {
     //         setUsername("");
     //         setPassword("");
     //     }
-    // }
+    }
 
     return (
         <div className="container" style={teacherSignupStyle}>
@@ -74,7 +74,7 @@ export default function TeacherSignup() {
                         onChange={(e) => setPassword(e.target.value)}
                         />
                     </div>
-                    <Link to="/teacherInstruction"><button type="submit" className="btn btn-primary" style={formGroupStyle}>Login</button></Link>
+                    <Link to="/teacherInstruction"><button type="submit" onSubmit={submit} className="btn btn-primary" style={formGroupStyle}>Login</button></Link>
                 </form>
             </div>
         </div>

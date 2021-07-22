@@ -37,16 +37,21 @@ export default function QuestionForm() {
                     </div>
                 </form>
             </div>
-            <div className="d-flex">
+            <div className="d-flex justify-content-between">
                 <div style={quesFormDivStyle}>
                     <form>
-                        <div className="form-group">
-                            <label htmlFor="testTitle"></label>
-                            <input class="form-control form-control-lg" type="text" className="form-control" id="testTitle" placeholder="Untitled Test"/>
-                        </div>
-                        <div className="form-group">
-                            <label htmlFor="testDescription"></label>
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="2" placeholder="Test Description"></textarea>
+                        <div className="d-flex">
+                            <div className="form-group">
+                                <label htmlFor="quesTitle"></label>
+                                <input class="form-control form-control-lg" type="text" className="form-control" id="quesTitle" placeholder="Untitled Question"/>
+                            </div>
+                            <form>
+                                <div className="form-group">
+                                    <label htmlFor="exampleFormControlFile1">Add Image</label>
+                                    <input type="file" class="form-control-file" id="exampleFormControlFile1"/>
+                                </div>
+                            </form>
+
                         </div>
                     </form>
                 </div>
