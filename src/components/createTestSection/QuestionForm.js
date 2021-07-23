@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 export default function QuestionForm() {
+    const [files, setFiles] = useState();
     let questionFormStyle = {
         minHeight: "76.5vh",
         marginTop: "100px",
@@ -23,6 +24,12 @@ export default function QuestionForm() {
         margin: "5vh",
         boxShadow: "0px 2px 4px 0px #002d48",
     }
+    const handleFileSelect = (e) => {
+        const file = e.target.value
+        console.log(file)
+        setFiles(e.target.value)
+    }
+
     return (
         <div style={questionFormStyle}>
             <div style={formDivStyle}>
@@ -37,25 +44,46 @@ export default function QuestionForm() {
                     </div>
                 </form>
             </div>
-            <div className="d-flex justify-content-between">
+            <div className="d-flex">
                 <div style={quesFormDivStyle}>
                     <form>
-                        <div className="d-flex">
-                            <div className="form-group">
+                        <div className="d-flex justify-content-between">
+                            <div className="form-group w-75">
                                 <label htmlFor="quesTitle"></label>
-                                <input class="form-control form-control-lg" type="text" className="form-control" id="quesTitle" placeholder="Untitled Question"/>
+                                <textarea class="form-control form-control-lg" type="text" rows="3" className="form-control" id="quesTitle" placeholder="Untitled Question"/>
                             </div>
-                            <form>
+                            <form className="w-25 px-3">
                                 <div className="form-group">
-                                    <label htmlFor="exampleFormControlFile1">Add Image</label>
-                                    <input type="file" class="form-control-file" id="exampleFormControlFile1"/>
+                                    <label htmlFor="exampleFormControlFile1">
+                                        <i class="fas fa-camera"></i>
+                                        {files}
+                                    </label>
+                                    <input style={{ display: 'none' }} type="file" className="form-control-file" id="exampleFormControlFile1" onChange={handleFileSelect}/>
                                 </div>
                             </form>
 
                         </div>
+                            <form>
+                                <br/><input type="radio" id="html" name="fav_language" value="HTML"/>
+                                <input className="mx-3 my-2" type="text" placeholder="option 1"/><br/>
+                                <input type="radio" id="css" name="fav_language" value="CSS"/>
+                                <input className="mx-3 my-2" type="text" placeholder="option 2"/><br/>
+                                <input type="radio" id="javascript" name="fav_language" value="JavaScript"/>
+                                <input className="mx-3 my-2" type="text" placeholder="option 3"/><br/>
+                                <input type="radio" id="javascript" name="fav_language" value="JavaScript"/>
+                                <input className="mx-3 my-2" type="text" placeholder="option 3"/><br/>
+                            </form>
                     </form>
                 </div>
-                <div className="list-group" style={quesOptionStyle}>
+                <div class="btn-group-vertical" role="group" aria-label="Basic example" style={quesOptionStyle}>
+                    <button type="button" class="btn"><i class="fa fa-plus-circle"></i></button>
+                    <button type="button" class="btn"><i class="fa fa-plus-square"></i></button>
+                    <button type="button" class="btn"><i class="fa fa-plus-square"></i></button>
+                    <button type="button" class="btn"><i class="fa fa-plus-circle"></i></button>
+                    <button type="button" class="btn"><i class="fa fa-plus-square"></i></button>
+                    <button type="button" class="btn"><i class="fa fa-plus-square"></i></button>
+                </div>
+                {/* <div className="list-group" style={quesOptionStyle}>
                     <button type="button" className="list-group-item list-group-item-action">
                         <i class="fa fa-plus-square"></i>
                     </button>
@@ -63,7 +91,7 @@ export default function QuestionForm() {
                     <button type="button" className="list-group-item list-group-item-action"><i class="fa fa-plus-square"></i></button>
                     <button type="button" className="list-group-item list-group-item-action"><i class="fa fa-plus-square"></i></button>
                     <button type="button" className="list-group-item list-group-item-action"><i class="fa fa-plus-square"></i></button>
-                </div>
+                </div> */}
             </div>
 
             
